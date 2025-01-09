@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ridewise/IntroPage.dart';
+import 'package:ridewise/SplashScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(),
+      home:  SplashScreen(),
     );
   }
 }
@@ -138,7 +140,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   backgroundColor: Colors.white60, // Button background color
                   //foregroundColor: Colors.white, // Text color
                 ),
-                child: const Text('New on RideWise? Sign In'),
+                child: const Text('New on RideWise? Sign Up'),
               ),
             ),
           ],
