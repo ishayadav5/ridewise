@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ridewise/IntroPage.dart';
 import 'package:ridewise/SplashScreen.dart';
+import 'package:ridewise/SignUpPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -134,6 +135,10 @@ class _MyHomePageState extends State<MyHomePage> {
               child: TextButton(
                 onPressed: () {
                   // Replace print with actual logic or remove it in production
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SignUpPage()),
+                  );
                   debugPrint("signing in");
                 },
                 style: TextButton.styleFrom(
@@ -146,6 +151,8 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
+
     );
   }
 }
+
