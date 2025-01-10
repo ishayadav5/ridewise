@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ridewise/IntroPage.dart';
 import 'package:ridewise/SplashScreen.dart';
 import 'package:ridewise/SignUpPage.dart';
+import 'package:ridewise/LoginPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:  SplashScreen(),
+      home: SplashScreen(),
     );
   }
 }
@@ -116,12 +117,48 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
             ),
-            const SizedBox(height: 20), // Space before the button
+            const SizedBox(height: 20), // Space before "OR"
+            const Center(
+              child: Text(
+                'OR',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black54,
+                ),
+              ),
+            ),
+            const SizedBox(height: 10), // Space before "Continue with Google"
+            Center(
+              child: Container(
+                width: 300,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5.0),
+                  border: Border.all(color: Colors.black54),
+                ),
+                child: TextButton(
+                  onPressed: () {
+                    debugPrint("Continue with Google");
+                  },
+                  child: const Text(
+                    'Continue with Google',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 20), // Space before "Login"
             Center(
               child: ElevatedButton(
                 onPressed: () {
-                  // Replace print with actual logic or remove it in production
-                  debugPrint("Phone number submitted");
+                  // Navigate to the IntroPage
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => IntroPage()),
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.black, // Button background color
@@ -130,11 +167,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: const Text('Login'),
               ),
             ),
-            const SizedBox(height: 20), // Space before the button
+            const SizedBox(height: 20), // Space before "Sign Up"
             Center(
               child: TextButton(
                 onPressed: () {
-                  // Replace print with actual logic or remove it in production
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => SignUpPage()),
@@ -142,8 +178,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   debugPrint("signing in");
                 },
                 style: TextButton.styleFrom(
-                  backgroundColor: Colors.white60, // Button background color
-                  //foregroundColor: Colors.white, // Text color
+                  backgroundColor: Colors.white60,
                 ),
                 child: const Text('New on RideWise? Sign Up'),
               ),
@@ -151,8 +186,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-
     );
   }
 }
-
