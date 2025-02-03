@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ridewise/IntroPage.dart';
-import 'package:ridewise/SplashScreen.dart';
-import 'package:ridewise/SignUpPage.dart';
-import 'package:ridewise/LoginPage.dart';
+import 'IntroPage.dart';
+import 'SplashScreen.dart';
+import 'SignUpPage.dart';
+import 'LoginPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -157,7 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   // Navigate to the IntroPage
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => IntroPage()),
+                    MaterialPageRoute(builder: (context) => LoginPage()),
                   );
                 },
                 style: ElevatedButton.styleFrom(
